@@ -16,18 +16,8 @@ If your user cannot run docker add your user to docker group in the system.
 ## Run the Fox ;)
 
 ```
-# git clone ... firefox-icedtea
-# cd ...
-# ./firefox-docker
+# git clone https://github.com/rvojcik/firefox-icedtea.git firefox-icedtea
+# cd firefox-icedtea
+# ./firefox-docker --help
 ```
-
-Or if you whish to add it to your PATH
-
-```
-...
-cd ...
-sudo make install
-firefox-docker
-```
-
 

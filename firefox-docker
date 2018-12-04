@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+# Simple more like example wrapper running script
+#
+#
+
+if [ -z $1 ] ; then
+    # Default release
+    release=14.04
+
+elif [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]] ; then
+    echo "Usage: $0 [release]"
+    echo " releases are: latest, 14.04, 16.04, 18.04"
+    exit 0
+
+else
+    if ! [[ "$1" =~ ^(latest|14.04|16.04|18.04)$ ]] ; then
+        echo "Sorry, unknown release $1"
+        exit 1
+    else
+        release=$1
+    fi
+fi
+
+echo "Running Firefox (Ubuntu:$release)"
+
+# Add permissions to xhost
+xhost +local:1000
+
+# Run docker image
+docker run -it --rm \
+    --user=firefox \
+    -e DISPLAY=$DISPLAY \
+    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+    robertvojcik/firefox-icedtea:$release
