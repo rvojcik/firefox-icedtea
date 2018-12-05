@@ -10,11 +10,11 @@ if [ -z $1 ] ; then
 
 elif [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]] ; then
     echo "Usage: $0 [release]"
-    echo " releases are: latest, iceweasel, trusty, trusty-stable"
+    echo " releases are: iceweasel, trusty, trusty-stable"
     exit 0
 
 else
-    if ! [[ "$1" =~ ^(latest|trusty|trusty-stable|iceweasel)$ ]] ; then
+    if ! [[ "$1" =~ ^(trusty|trusty-stable|iceweasel)$ ]] ; then
         echo "Sorry, unknown release $1"
         exit 1
     else
