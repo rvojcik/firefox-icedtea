@@ -6,7 +6,7 @@
 
 if [ -z $1 ] ; then
     # Default release
-    release=14.04
+    release=trusty
 
 elif [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]] ; then
     echo "Usage: $0 [release]"
