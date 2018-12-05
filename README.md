@@ -22,6 +22,6 @@ If your user cannot run docker add your user to docker group in the system.
 ```
 # Releases
 
-* iceweasel, Debian Wheezy + Iceweasel from Distribution
+* iceweasel, Debian Wheezy + Iceweasel 52.8.0
 * trusty, Ubuntu Trusty 14.04 + Firefox 51.0 
 * trusty-stable, Ubuntu Trusty 14.04 + Firefox 63.0.3
