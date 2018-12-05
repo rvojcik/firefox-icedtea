@@ -10,7 +10,7 @@ if [ -z $1 ] ; then
 
 elif [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]] ; then
     echo "Usage: $0 [release]"
-    echo " releases are: latest, 14.04, 16.04, 18.04"
+    echo " releases are: latest, trusty, trusty-stable, iceweasel"
     exit 0
 
 else
@@ -22,7 +22,7 @@ else
     fi
 fi
 
-echo "Running Firefox (Ubuntu:$release)"
+echo "Running Firefox ($release)"
 
 # Add permissions to xhost
 xhost +local:1000
