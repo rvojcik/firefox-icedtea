@@ -10,11 +10,11 @@ if [ -z $1 ] ; then
 
 elif [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]] ; then
     echo "Usage: $0 [release]"
-    echo " releases are: latest, 14.04, 16.04, 18.04, iceweasel"
+    echo " releases are: latest, 14.04, 16.04, 18.04"
     exit 0
 
 else
-    if ! [[ "$1" =~ ^(latest|14.04|16.04|18.04|iceweasel)$ ]] ; then
+    if ! [[ "$1" =~ ^(latest|14.04|16.04|18.04)$ ]] ; then
         echo "Sorry, unknown release $1"
         exit 1
     else
