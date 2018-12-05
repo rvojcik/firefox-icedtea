@@ -20,4 +20,8 @@ If your user cannot run docker add your user to docker group in the system.
 # cd firefox-icedtea
 # ./firefox-docker --help
 ```
+# Releases
 
+* iceweasel, Debian Wheezy + Iceweasel from Distribution
+* trusty, Ubuntu Trusty 14.04 + Firefox 51.0 
+* trusty-stable, Ubuntu Trusty 14.04 + Firefox 63.0.3
