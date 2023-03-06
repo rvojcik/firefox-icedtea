@@ -24,12 +24,25 @@ fi
 
 echo "Running Firefox ($release)"
 
-# Add permissions to xhost
-xhost +local:1000
+if [[ "$OSTYPE" =~ ^[Dd]arwin.* ]] ; then
+    echo "MacOs detected"
+    if ! open -a xquartz ; then
+        echo "Unable to find xquartz app" >&2
+        echo "Install with brew" >&2
+        exit 1
+    fi
+    DISP_OPT=${HOSTNAME}:0
+    xhost +localhost
+else
+    DISP_OPT=$DISPLAY
+    # Add permissions to xhost
+    xhost +local:1000
+fi
+
 
 # Run docker image
 docker run -it --rm \
     --user=firefox \
-    -e DISPLAY=$DISPLAY \
+    -e DISPLAY=$DISP_OPT \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     robertvojcik/firefox-icedtea:$release
