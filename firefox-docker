@@ -45,5 +45,6 @@ docker run -it --rm \
     --user=firefox \
     -e DISPLAY=$DISP_OPT \
     --network=host \
+    --ulimit nofile=65536:65536 \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     robertvojcik/firefox-icedtea:$release
